@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>¤ñÁÉ¹{¼ú</title>
+    <title>æ¯”è³½?’ç?</title>
     <style>
         .contestant {
             width: 100px;
@@ -52,18 +52,18 @@
 </head>
 <body bgcolor="#D8D8EB">
 <center>
-    <h1>¤ñÁÉ¹{¼ú</h1>
+    <h1>æ¯”è³½?’ç?</h1>
     <div id="contestants">
-        <span  class="contestant" id="¥Ò" draggable="true">¤p©ú</span >
-        <span  class="contestant" id="¤A" draggable="true">¤pµØ</span >
-        <span  class="contestant" id="¤ş" draggable="true">¤p¬ü</span >
+        <span  class="contestant" id="?? draggable="true">å°æ?</span >
+        <span  class="contestant" id="ä¹? draggable="true">å°è¯</span >
+        <span  class="contestant" id="ä¸? draggable="true">å°ç?</span >
     </div>
-    <h2>¹{¼ú¥x</h2>
+    <h2>?’ç???/h2>
 	<table border="0" id="tb" cellpadding="0" cellspacing="0">
 	<tr>
-	<td class="podium"><span class="podtxt" id="¨È­x" ondrop="drop(event)" ondragover="allowDrop(event)">¡@¡@</span></td>
-    <td class="podium"><span class="podtxt" id="«a­x" ondrop="drop(event)" ondragover="allowDrop(event)">¡@¡@</span></td>
-    <td class="podium"><span class="podtxt" id="©u­x" ondrop="drop(event)" ondragover="allowDrop(event)">¡@¡@</span></td>
+	<td class="podium"><span class="podtxt" id="äºè?" ondrop="drop(event)" ondragover="allowDrop(event)">?€?€</span></td>
+    <td class="podium"><span class="podtxt" id="? è?" ondrop="drop(event)" ondragover="allowDrop(event)">?€?€</span></td>
+    <td class="podium"><span class="podtxt" id="å­??" ondrop="drop(event)" ondragover="allowDrop(event)">?€?€</span></td>
 	</tr>
 	<tr><td colspan="3">
 	<img src="champ4.gif">
@@ -87,23 +87,23 @@
             var data = event.dataTransfer.getData("text/plain");
             var target = event.target;
 
-				if (target.id === "«a­x") {
-				    if (data == "¥Ò") {
-					   $("#¥Ò").addClass("first");
-                       $("#«a­x").replaceWith($("#¥Ò")); 
+				if (target.id === "? è?") {
+				    if (data == "??) {
+					   $("#??).addClass("first");
+                       $("#? è?").replaceWith($("#??)); 
 					}
 					
-                } else if (target.id === "¨È­x") {
-				    if (data == "¤A") {
-					   $("#¤A").addClass("second");
-                       $("#¨È­x").replaceWith($("#¤A"));
-					   $("#¨È­x").addClass("second");
+                } else if (target.id === "äºè?") {
+				    if (data == "ä¹?) {
+					   $("#ä¹?).addClass("second");
+                       $("#äºè?").replaceWith($("#ä¹?));
+					   $("#äºè?").addClass("second");
 					}
-                } else if (target.id === "©u­x") {
-				    if (data == "¤ş") {
-					   $("#¤ş").addClass("third");
-                       $("#©u­x").replaceWith($("#¤ş"));
-					   $("#©u­x").addClass("third");					
+                } else if (target.id === "å­??") {
+				    if (data == "ä¸?) {
+					   $("#ä¸?).addClass("third");
+                       $("#å­??").replaceWith($("#ä¸?));
+					   $("#å­??").addClass("third");					
 					}
                 }
         }
