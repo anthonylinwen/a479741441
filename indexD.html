@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>¤ñÁÉ¹{¼ú</title>
+    <title>æ¯”è³½é ’çæ¯”è³½é ’ç</title>
     <style>
         .contestant {
             width: 100px;
@@ -53,18 +53,18 @@
 </head>
 <body bgcolor="#D8D8EB">
 <center>
-    <h1>¤ñÁÉ¹{¼ú</h1>
+    <h1>æ¯”è³½é ’ç</h1>
     <div id="contestants">
-        <span  class="contestant" id="¥Ò" draggable="true">¤p©ú</span >
-        <span  class="contestant" id="¤A" draggable="true">¤pµØ</span >
-        <span  class="contestant" id="¤ş" draggable="true">¤p¬ü</span >
+        <span  class="contestant" id="ç”²" draggable="true">å°æ˜</span >
+        <span  class="contestant" id="ä¹™" draggable="true">å°è¯</span >
+        <span  class="contestant" id="ä¸™" draggable="true">å°ç¾</span >
     </div>
-    <h2>¹{¼ú¥x</h2>
+    <h2>é ’çå°</h2>
 	<table border="0" id="tb" cellpadding="0" cellspacing="0">
 	<tr>
-	<td class="podium"><span class="podtxt" id="¨È­x" ondrop="drop(event)" ondragover="allowDrop(event)">¡@¡@</span></td>
-    <td class="podium"><span class="podtxt" id="«a­x" ondrop="drop(event)" ondragover="allowDrop(event)">¡@¡@</span></td>
-    <td class="podium"><span class="podtxt" id="©u­x" ondrop="drop(event)" ondragover="allowDrop(event)">¡@¡@</span></td>
+	<td class="podium"><span class="podtxt" id="äºè»" ondrop="drop(event)" ondragover="allowDrop(event)">ã€€ã€€</span></td>
+    <td class="podium"><span class="podtxt" id="å† è»" ondrop="drop(event)" ondragover="allowDrop(event)">ã€€ã€€</span></td>
+    <td class="podium"><span class="podtxt" id="å­£è»" ondrop="drop(event)" ondragover="allowDrop(event)">ã€€ã€€</span></td>
 	</tr>
 	<tr><td colspan="3">
 	<img src="champ4.gif">
@@ -87,17 +87,17 @@
             event.preventDefault();
             var data = event.dataTransfer.getData("text/plain");
             var target = event.target;
-                // ¸m¥Ò¡B¤A¡B¤şªº¦ì¸m
+                // ç½®ç”²ã€ä¹™ã€ä¸™çš„ä½ç½®
                 /*                 
-				if (target.id === "«a­x") {
-                    $("#¤A").appendTo("#podium");
-                    $("#¨È­x").append($("#¥Ò"));
-                } else if (target.id === "¨È­x") {
-                    $("#©u­x").append($("#¤A"));
-                    $("#«a­x").append($("#¥Ò"));
-                } else if (target.id === "©u­x") {
-                    $("#¨È­x").append($("#¤A"));
-                    $("#«a­x").append($("#¥Ò"));
+				if (target.id === "å† è»") {
+                    $("#ä¹™").appendTo("#podium");
+                    $("#äºè»").append($("#ç”²"));
+                } else if (target.id === "äºè»") {
+                    $("#å­£è»").append($("#ä¹™"));
+                    $("#å† è»").append($("#ç”²"));
+                } else if (target.id === "å­£è»") {
+                    $("#äºè»").append($("#ä¹™"));
+                    $("#å† è»").append($("#ç”²"));
                 }
                 */
 		        /*	
@@ -114,24 +114,24 @@
                 });
                 */
 
-				if (target.id === "«a­x") {
-				    if (data == "¥Ò") {
-					   $("#¥Ò").addClass("first");
-                       $("#«a­x").replaceWith($("#¥Ò")); 
+				if (target.id === "å† è»") {
+				    if (data == "ç”²") {
+					   $("#ç”²").addClass("first");
+                       $("#å† è»").replaceWith($("#ç”²")); 
 					  // console.log(classList) ;
 					}
 					
-                } else if (target.id === "¨È­x") {
-				    if (data == "¤A") {
-					   $("#¤A").addClass("second");
-                       $("#¨È­x").replaceWith($("#¤A"));
-					   $("#¨È­x").addClass("second");
+                } else if (target.id === "äºè»") {
+				    if (data == "ä¹™") {
+					   $("#ä¹™").addClass("second");
+                       $("#äºè»").replaceWith($("#ä¹™"));
+					   $("#äºè»").addClass("second");
 					}
-                } else if (target.id === "©u­x") {
-				    if (data == "¤ş") {
-					   $("#¤ş").addClass("third");
-                       $("#©u­x").replaceWith($("#¤ş"));
-					   $("#©u­x").addClass("third");					
+                } else if (target.id === "å­£è»") {
+				    if (data == "ä¸™") {
+					   $("#ä¸™").addClass("third");
+                       $("#å­£è»").replaceWith($("#ä¸™"));
+					   $("#å­£è»").addClass("third");					
 					}
                 }
 
