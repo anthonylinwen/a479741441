@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>拖放比賽</title>
+    <style>
+        .contestant {
+            width: 100px;
+            height: 50px;
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .podium {
+            width: 200px;
+            height: 50px;
+            border: 2px solid #333;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>托放比賽</h1>
+    <div id="contestants">
+        <span  class="contestant" id="甲" draggable="true">甲</span >
+        <span  class="contestant" id="乙" draggable="true">乙</span >
+        <span  class="contestant" id="丙" draggable="true">丙</span >
+    </div>
+    <h2>臺階</h2>
+    <div id="podium">
+        <span class="podium" id="冠軍" ondrop="drop(event)" ondragover="allowDrop(event)">冠軍</span>
+        <span class="podium" id="亞軍" ondrop="drop(event)" ondragover="allowDrop(event)">亞軍</span>
+        <span class="podium" id="季軍" ondrop="drop(event)" ondragover="allowDrop(event)">季軍</span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(".contestant").on("dragstart", function (event) {
+            event.originalEvent.dataTransfer.setData("text/plain", event.target.id);
+        });
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData("text/plain");
+            var target = event.target;
+            if (target.className === "podium") {
+                target.appendChild(document.getElementById(data));
+
+                // 置甲、乙、丙的位置
+                /*                 
+				if (target.id === "冠軍") {
+                    $("#乙").appendTo("#podium");
+                    $("#亞軍").append($("#甲"));
+                } else if (target.id === "亞軍") {
+                    $("#季軍").append($("#乙"));
+                    $("#冠軍").append($("#甲"));
+                } else if (target.id === "季軍") {
+                    $("#亞軍").append($("#乙"));
+                    $("#冠軍").append($("#甲"));
+                }
+                */
+		        /*	
+                  $(".box").draggable({
+                  revert: "invalid"
+                  });
+                  $(".target").droppable({
+                  accept: ".box",
+                  drop: function(event, ui) {
+                  $(this).html(ui.draggable.attr("id"));
+                  ui.draggable.draggable("disable");
+                  ui.draggable.position({ of: $(this), my: "center", at: "center" });
+                }
+                });
+                */
+				
+				if (target.id === "冠軍") {
+				    if (data == "甲") 
+                    $("#冠軍").append($("#甲"))
+                } else if (target.id === "亞軍") {
+				    if (data == "乙") 
+                    $("#亞軍").append($("#乙"))
+                } else if (target.id === "季軍") {
+				    if (data == "丙") 
+                    $("#季軍軍").append($("#丙"))
+                }
+            }
+        }
+    </script>
+</body>
+</html>

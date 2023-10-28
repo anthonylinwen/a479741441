@@ -1,112 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ÊØîË≥Ω?íÁ?</title>
-    <style>
-        .contestant {
-            width: 100px;
-            height: 20px;
-            border: 1px solid #ccc;
-            text-align: center;
-            padding: 10px;
-            margin: 10px;
-            cursor: pointer;
-			color:#842B00 ;
-			font-weight: bold;
-        }
-        .podium {
-            width: 200px;
-            height: 15px;
-            border: 0px dotted #111;
-            text-align: center;
-            padding: 0px;
-            margin: 0px;
-			font-size:45px;
-        }
-		.podtxt {
-            width: 110px;
-            height: 15px;
-            border: 1px dotted #333;
-            text-align: center;
-            padding: 0px;
-            margin: 0px;
-			font-size:20px;
-        }
-		#tb {
-		    width: 560px;
-            height: 400px;
-			padding: 0px;
-			spacing: 0px;
-		}
-		.first {
-          color: #e83845;
-        }   		
+<!DOCTYPE html><html>
+<!-- Mirrored from census.dgbas.gov.tw/CensusGIS_Game/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jun 2020 13:10:13 GMT -->
+<head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>censusgis_game</title><link rel=stylesheet type=text/css href=static/map.css><script type=text/javascript src=static/sgsScript/AjaxAgent.js></script><script type=text/javascript src=static/sgsScript/Framework.js></script><script type=text/javascript src=static/sgsScript/Tasks.js></script><script type=text/javascript src=static/sgsScript/GFX.js></script><script type=text/javascript src=static/sgsScript/FX.js></script><script type=text/javascript src=static/sgsScript/MapBase.js></script><script type=text/javascript src=static/sgsScript/Controls.js></script><script type=text/javascript src=static/sgsScript/MapLayer.js></script><script type=text/javascript src=static/sgsScript/Navigate.js></script><script type=text/javascript src=static/sgsScript/Tracker.js></script><script type=text/javascript src=static/sgsScript/Geometry.js></script><script type=text/javascript src=static/sgsScript/Symbol.js></script><script type=text/javascript src=static/sgsScript/Draw.js></script><script type=text/javascript src=static/sgsScript/Renderer.js></script><script type=text/javascript src=static/sgsScript/Layer.js></script><script type=text/javascript src=static/sgsScript/Symbol.js></script><script type=text/javascript src=static/sgsScript/Graphic.js></script><script type=text/javascript src=static/sgsScript/GraphicsLayer.js></script><script type=text/javascript src=static/sgsScript/Infowindow.js></script><script type=text/javascript src=static/sgsScript/Query.js></script><script type=text/javascript src=static/sgsScript/ext/Base.js></script><script type=text/javascript src=static/sgsScript/ext/OperationBase.js></script><script type=text/javascript src=static/sgsScript/EditOperation.js></script><script type=text/javascript src=static/sgsScript/Edit.js></script><script type=text/javascript src=static/sgsScript/CoordSys.js></script><script type=text/javascript src=static/sgsScript/Mercator.js></script><script type=text/javascript src=../../unpkg.com/leaflet%401.0.3/dist/leaflet.js></script><script type=text/javascript src=static/tile.stamen.js></script><script type=text/javascript src=../../d3js.org/d3.v4.min.js></script><script type=text/javascript src=../../cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min.js></script><script type=text/javascript src=../../cdnjs.cloudflare.com/ajax/libs/d3-annotation/1.12.1/d3-annotation.min.js></script><link rel=stylesheet href=../../unpkg.com/purecss%400.6.2/build/base-min.css><link rel=stylesheet href=../../unpkg.com/purecss%400.6.2/build/buttons-min.css><link rel=stylesheet href=../../unpkg.com/leaflet%401.0.3/dist/leaflet.css type=text/css><link rel=stylesheet type=text/css href=static/InfoWindow.css><script>var pageCheckForFarmGame = null;
+      var pageCheckForFoodGame = null;
+      var pageCheckForLifeGame = null;
+      var pageCheckForWorkGame = null;
+      var LifeGameData = null, LifeGameCityA = null, LifeGameCityB = null, LifeGameTownA = null, LifeGameTownB = null;
+      var pageCheckForLanguageGame = null;</script><style>#WorkGameBody .area {
+        fill: #C1D974;
+        clip-path: url(#clip);
+      }
 
-		.second {
-           color: #2828FF;
-        } 
-		.third {
-           color: #00A600 ;
-        } 		
-    </style>
-</head>
-<body bgcolor="#D8D8EB">
-<center>
-    <h1>ÊØîË≥Ω?íÁ?</h1>
-    <div id="contestants">
-        <span  class="contestant" id="?? draggable="true">Â∞èÊ?</span >
-        <span  class="contestant" id="‰π? draggable="true">Â∞èËèØ</span >
-        <span  class="contestant" id="‰∏? draggable="true">Â∞èÁ?</span >
-    </div>
-    <h2>?íÁ???/h2>
-	<table border="0" id="tb" cellpadding="0" cellspacing="0">
-	<tr>
-	<td class="podium"><span class="podtxt" id="‰∫ûË?" ondrop="drop(event)" ondragover="allowDrop(event)">?Ä?Ä</span></td>
-    <td class="podium"><span class="podtxt" id="?†Ë?" ondrop="drop(event)" ondragover="allowDrop(event)">?Ä?Ä</span></td>
-    <td class="podium"><span class="podtxt" id="Â≠??" ondrop="drop(event)" ondragover="allowDrop(event)">?Ä?Ä</span></td>
-	</tr>
-	<tr><td colspan="3">
-	<img src="champ4.gif">
-	</td>
-	</tr>
-	</table>
-	</center>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(".contestant").on("dragstart", function (event) {
-            event.originalEvent.dataTransfer.setData("text/plain", event.target.id);
-        });
-
-        function allowDrop(event) {
-            event.preventDefault();
-        }
-
-        function drop(event) {
-            event.preventDefault();
-            var data = event.dataTransfer.getData("text/plain");
-            var target = event.target;
-
-				if (target.id === "?†Ë?") {
-				    if (data == "??) {
-					   $("#??).addClass("first");
-                       $("#?†Ë?").replaceWith($("#??)); 
-					}
-					
-                } else if (target.id === "‰∫ûË?") {
-				    if (data == "‰π?) {
-					   $("#‰π?).addClass("second");
-                       $("#‰∫ûË?").replaceWith($("#‰π?));
-					   $("#‰∫ûË?").addClass("second");
-					}
-                } else if (target.id === "Â≠??") {
-				    if (data == "‰∏?) {
-					   $("#‰∏?).addClass("third");
-                       $("#Â≠??").replaceWith($("#‰∏?));
-					   $("#Â≠??").addClass("third");					
-					}
-                }
-        }
-    </script>
-</body>
+      #WorkGameBody .zoom {
+        cursor: move;
+        fill: none;
+        pointer-events: all;
+      }</style><link href=static/css/app.cd05336e7f154b23cd723d62cd55d044.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=static/js/manifest.2c9d1853186cb75d6ec4.js></script><script type=text/javascript src=static/js/vendor.ac249dd9664b504bd354.js></script><script type=text/javascript src=static/js/app.cf63d083757d292e5dbd.js></script></body>
+<!-- Mirrored from census.dgbas.gov.tw/CensusGIS_Game/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jun 2020 13:10:25 GMT -->
 </html>

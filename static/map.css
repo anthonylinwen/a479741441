@@ -1,0 +1,198 @@
+﻿.sgContainer
+{
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.sgContainer .hObject
+{
+    /*background-color: White;*/
+}
+
+.mapContainer .tooltip
+{
+    position: fixed;
+    border: 1px solid #70aa70;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 5px;
+    z-index: 9999;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.sgTooltip
+{
+    position: absolute;
+    border: 1px solid #70aa70;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 5px;
+    z-index: 9999;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.level-pad
+{
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+.level-pad td
+{
+    padding: 0px;
+}
+
+.level-pad .top-row img
+{
+    vertical-align: bottom;
+}
+
+.level-pad .middle-row img
+{
+    vertical-align: middle;
+}
+
+.level-pad .bottom-row img
+{
+    vertical-align: top;
+}
+
+.layer-swipe
+{
+    position: absolute;
+}
+
+
+.layer-swipe:hover
+{
+    opacity: 0.8;
+}
+
+.layer-swipe .bar
+{
+    position: absolute;
+    background-color: #eaeaea;
+}
+
+
+.layer-swipe .horizontal-bar
+{
+    border-top: 1px solid #505050;
+    border-bottom: 1px solid #505050;
+    height: 4px;
+    width: 100%;
+}
+
+.layer-swipe .vertical-bar
+{
+    border-left: 1px solid #505050;
+    border-right: 1px solid #505050;
+    width: 4px;
+    height: 100%;
+}
+
+.layer-swipe .handle
+{
+    position: absolute;
+    background-color: #eaeaea;
+    border: 1px solid #505050;
+    border-radius: 4px;
+}
+
+.layer-swipe .vertical-handle
+{
+    width: 18px;
+    height: 36px;
+    cursor: col-resize;
+    background: linear-gradient(to right,#eaeaea,#eaeaea,lightgray);
+    left: -9px;
+}
+
+.layer-swipe .horizontal-handle
+{
+    width: 36px;
+    height: 18px;
+    cursor: row-resize;
+    background: linear-gradient(to bottom,#eaeaea,#eaeaea,lightgray);
+    top: -9px;
+}
+
+.print-tool-container
+{
+    width: 244px;
+    overflow: auto;
+}
+
+.print-tool-container .template-view
+{
+    width: 560px;
+    text-align: right;
+}
+
+.print-tool-template
+{
+    border: 2px solid rgba(0,0,0,0);
+    width: 130px;
+    height: 130px;
+    padding: 4px;
+    text-align: center;
+}
+
+.print-tool-template:hover
+{
+    border: 2px solid #6f6f6f;
+}
+
+.print-tool-template.focus
+{
+    border: 2px solid #68d0d7;
+}
+
+.print-tool-template img
+{
+    vertical-align: middle;
+}
+
+.print-tool-template .landscape
+{
+    width: 100%;
+    max-width: 100%;
+}
+
+.print-tool-template .portrait
+{
+    height: 100%;
+    max-height: 100%;
+}
+
+.print-tool-container .setting-View button
+{
+    margin-top: 16px;
+    float: right;
+}
+.print-tool-container .setting-View input[type='checkbox']
+{
+    margin-top: 4px;
+}
+
+
+.attribute-inspector table
+{
+    width : 100%;
+}
+
+.attribute-inspector table tr:first-child
+{
+    width : 35%;
+}
+
+.attribute-inspector .nav-bar button
+{
+    margin-right : 4px;
+}
