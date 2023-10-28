@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>比賽頒獎</title>
+    <style>
+        .contestant {
+            width: 100px;
+            height: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+			color:#842B00 ;
+			font-weight: bold;
+        }
+        .podium {
+            width: 200px;
+            height: 15px;
+            border: 0px dotted #111;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+			font-size:45px;
+        }
+		.podtxt {
+            width: 110px;
+            height: 15px;
+            border: 1px dotted #333;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+			font-size:20px;
+		//	visibility: hidden;
+        }
+		#tb {
+		    width: 560px;
+            height: 400px;
+			padding: 0px;
+			spacing: 0px;
+		}
+		.first {
+          color: #e83845;
+        }   		
+
+		.second {
+           color: #2828FF;
+        } 
+		.third {
+           color: #00A600 ;
+        } 		
+    </style>
+</head>
+<body bgcolor="#D8D8EB">
+<center>
+    <h1>比賽頒獎</h1>
+    <div id="contestants">
+        <span  class="contestant" id="甲" draggable="true">小明</span >
+        <span  class="contestant" id="乙" draggable="true">小華</span >
+        <span  class="contestant" id="丙" draggable="true">小美</span >
+    </div>
+    <h2>頒獎台</h2>
+	<table border="0" id="tb" cellpadding="0" cellspacing="0">
+	<tr>
+	<td class="podium"><span class="podtxt" id="亞軍" ondrop="drop(event)" ondragover="allowDrop(event)">　　</span></td>
+    <td class="podium"><span class="podtxt" id="冠軍" ondrop="drop(event)" ondragover="allowDrop(event)">　　</span></td>
+    <td class="podium"><span class="podtxt" id="季軍" ondrop="drop(event)" ondragover="allowDrop(event)">　　</span></td>
+	</tr>
+	<tr><td colspan="3">
+	<img src="champ4.gif">
+	</td>
+	</tr>
+	</table>
+	</center>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(".contestant").on("dragstart", function (event) {
+            event.originalEvent.dataTransfer.setData("text/plain", event.target.id);
+        });
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData("text/plain");
+            var target = event.target;
+                // 置甲、乙、丙的位置
+                /*                 
+				if (target.id === "冠軍") {
+                    $("#乙").appendTo("#podium");
+                    $("#亞軍").append($("#甲"));
+                } else if (target.id === "亞軍") {
+                    $("#季軍").append($("#乙"));
+                    $("#冠軍").append($("#甲"));
+                } else if (target.id === "季軍") {
+                    $("#亞軍").append($("#乙"));
+                    $("#冠軍").append($("#甲"));
+                }
+                */
+		        /*	
+                  $(".box").draggable({
+                  revert: "invalid"
+                  });
+                  $(".target").droppable({
+                  accept: ".box",
+                  drop: function(event, ui) {
+                  $(this).html(ui.draggable.attr("id"));
+                  ui.draggable.draggable("disable");
+                  ui.draggable.position({ of: $(this), my: "center", at: "center" });
+                }
+                });
+                */
+
+				if (target.id === "冠軍") {
+				    if (data == "甲") {
+					   $("#甲").addClass("first");
+                       $("#冠軍").replaceWith($("#甲")); 
+					  // console.log(classList) ;
+					}
+					
+                } else if (target.id === "亞軍") {
+				    if (data == "乙") {
+					   $("#乙").addClass("second");
+                       $("#亞軍").replaceWith($("#乙"));
+					   $("#亞軍").addClass("second");
+					}
+                } else if (target.id === "季軍") {
+				    if (data == "丙") {
+					   $("#丙").addClass("third");
+                       $("#季軍").replaceWith($("#丙"));
+					   $("#季軍").addClass("third");					
+					}
+                }
+
+			//
+        }
+    </script>
+</body>
+</html>
